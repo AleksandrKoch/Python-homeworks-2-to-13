@@ -172,10 +172,14 @@ num_str = str(input_number)
 
 # (ADD YOUR CODE BELOW)
 
+reversed_str = num_str[:0:-1]
+
 # Add the negative symbol back to the reversed string
 reversed_num = int(num_str[0] + reversed_str)
 
 # Output the result
+print(reversed_num)
+
 # (ADD YOUR CODE BELOW)
 
 # ---------------------------------------------------------------------
@@ -215,6 +219,13 @@ average_speed = miles / hours
 
 # Formatting and displaying the result
 # (Your code here)
-rounded_speed = ????
+average_speed = str(average_speed)
+decimal_position = average_speed.find(".")
+print(decimal_position)
+rounded_speed = average_speed
+if "." in average_speed:
+    rounded_speed = average_speed[:decimal_position]+"."+average_speed[decimal_position+1]
+else:
+    rounded_speed = average_speed
 
 print(f"The average speed is {rounded_speed} miles per hour")
