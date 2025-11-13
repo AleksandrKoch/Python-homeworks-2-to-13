@@ -9,9 +9,12 @@ job_title = "QA Manager"
 
 # Practice 1.1 - Using concatenation with +
 # (your solution goes here)
+print(name + " is a " + str(age) + " years old " + job_title + " of our company")
 
 # Practice 1.2 - Using .format()
 # (your solution goes here)
+print("{name} is a  {age}  years old {job_title} of our company".format(name=name, age=str(age), job_title=job_title))
 
 # Practice 1.3 - Using f-strings
 # (your solution goes here)
+print(f"{name} is a {age} years old {job_title} of our company")
