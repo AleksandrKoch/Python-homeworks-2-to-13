@@ -4,3 +4,5 @@
 
 # For example, if the user enters "John",
 # the program should output "Your name is John."
+name = input("Please enter your name: ").title()
+print(f"Your name is {name}.")
