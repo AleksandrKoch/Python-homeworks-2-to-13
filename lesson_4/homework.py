@@ -10,6 +10,8 @@
 temperature = int(input("Enter the temperature in Fahrenheit: "))
 
 # <Your code here>
+if temperature > 85:
+    print("Hot day ahead!")
 
 # ---------------------------------------------------------------------
 # Exercise 2: Grade Classifier
@@ -20,7 +22,12 @@ temperature = int(input("Enter the temperature in Fahrenheit: "))
 # you need to convert it so you can use the value as a number.
 
 # <Your code here>
+grade = int(input("Enter your grade: "))
 
+if grade >= 50:
+    print("Pass")
+else:
+    print("Fail")
 # ---------------------------------------------------------------------
 # Exercise 3: Scholarship Eligibility
 # Your university offers scholarships based on academic performance.
@@ -37,7 +44,12 @@ temperature = int(input("Enter the temperature in Fahrenheit: "))
 gpa = float(input("Enter your GPA: "))
 
 # <Your code here>
-
+if gpa >= 3.5:
+    print("Congratulations, you're eligible for a scholarship!")
+elif 3.49 >= gpa >= 3.0:
+    print("You're on the waiting list.")
+else:
+    print("Keep up the good work.")
 # ---------------------------------------------------------------------
 # Exercise 4: Shopping Discount
 # A store is offering a discount on a product. Write a program that
@@ -47,10 +59,13 @@ gpa = float(input("Enter your GPA: "))
 original_price = float(input("Enter product original price: "))
 discount_percentage = float(input("Enter discount percentage: "))
 
-discounted_price = # calculate the discounted price here
+discounted_price = original_price - (original_price * discount_percentage / 100) # calculate the discounted price here
 
 # <Your code here>
-
+if discounted_price < 50:
+    print("Great deal!")
+else:
+    print("Might want to wait for a better offer.")
 # ---------------------------------------------------------------------
 # Exercise 5: Movie Night Decision
 # You and your friends are deciding on a movie to watch. Write a
@@ -59,6 +74,13 @@ discounted_price = # calculate the discounted price here
 # print "Let's just pick one."
 
 # <Your code here>
+movie1 = float(input("Enter the movie 1 rating: "))
+movie2 = float(input("Enter the movie 2 rating: "))
+
+if movie1 > 7 and movie2 > 7:
+    print("Let's watch both!")
+else:
+    print("Let's just pick one.")
 
 # ---------------------------------------------------------------------
 # Exercise 6: Restaurant Recommendation
@@ -69,7 +91,14 @@ discounted_price = # calculate the discounted price here
 # For other cases, recommend a casual dining place.
 
 # <Your code here>
-
+mood = input("Enter a mood (happy or sad)")
+hunger_level = input("Enter a hunger level (high or low)")
+if mood == "happy" and hunger_level == "high":
+    print("Fancy restaurant recommended")
+elif mood == "sad" and hunger_level == "high":
+    print("Comfort food recommended")
+else:
+    print("casual dining place recommended")
 # ---------------------------------------------------------------------
 # Exercise 7: Exercise 7: Tax Bracket Calculator
 # You're building a tax calculation system. Write a program that
