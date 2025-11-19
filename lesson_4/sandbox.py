@@ -39,11 +39,22 @@ course_code = course_code.upper()
 student_grade = student_grade.upper()
 
 # Extract the last three characters of the course code (use string slicing)
-course_suffix =  # your code here
+course_suffix =  course_code[-3:]
 
 # Check course code and grade to determine eligibility
 if course_suffix == "101":
-    ...  # <Your code here>
+    if student_grade == "A" or student_grade == "B":
+        print(f"You are eligible to enroll to {course_code}")
+    else:
+        print(f"You are not eligible to enroll to {course_code}")
 elif course_suffix == "202":
-    ...  # <Your code here>
+    if student_grade == "A" or student_grade == "B" or student_grade == "C":
+        print(f"You are eligible to enroll to {course_code}")
+    else:
+        print(f"You are not eligible to enroll to {course_code}")
+else:
+    if student_grade == "A" or student_grade == "B" or student_grade == "C" or student_grade == "D":
+        print(f"You are eligible to enroll to {course_code}")
+    else:
+        print(f"You are not eligible to enroll to {course_code}")
 # <Your code here>
