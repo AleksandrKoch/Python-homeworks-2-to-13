@@ -115,7 +115,14 @@ else:
 annual_income = float(input("Enter your annual income: "))
 
 # <Your code here>
+if annual_income < 40000:
+    tax_rate = 0.1 # 10 / 100 or 10%
+elif 100000 > annual_income > 40000:
+    tax_rate = 0.2 # 20 / 100 or 20%
+else:
+    tax_rate = 0.3 # 30 / 100 or 30%
 
+tax_amount = annual_income * tax_rate
 # Print tax amount
 print(f"Your tax amount is ${tax_amount}")
 
@@ -130,7 +137,16 @@ print(f"Your tax amount is ${tax_amount}")
 # Print the calculated ticket price for the given age.
 
 # <Your code here>
+age = int(input("Enter your age: "))
 
+if 12 >= age >= 3:
+    price = 10
+elif 64 >= age >= 13:
+    price = 20
+else:
+    price = 15
+
+print(f"Your current price is ${price}")
 # ---------------------------------------------------------------------
 # Exercise 9: Password Strength Checker
 # Create a program that takes a password as input and checks its
@@ -145,7 +161,12 @@ print(f"Your tax amount is ${tax_amount}")
 password = input("Enter your password: ")
 
 # <Your code here>
-
+if len(password) < 8:
+    print("Weak password")
+elif 12>= len(password) >= 8:
+    print("Moderate password")
+else:
+    print("Strong password")
 # ---------------------------------------------------------------------
 # CHALLENGE (OPTIONAL): Course Enrollment Eligibility
 # To solve this exercise, you will need to use the following concepts
