@@ -18,20 +18,20 @@
 # and the second sub-element is their age.
 
 # List 1:
-# list_1 = []
-# list_1.a???('Friend1')
-# list_1.???('Friend2')
-# list_1.???('Friend3')
+list_1 = []
+list_1.append('Anna')
+list_1.append('Julia')
+list_1.append('Mick')
 
 # List 2:
-# list_2 = [???, ???, ???]
+list_2 = ['Anna','Julia' ,'Mick']
 
 # List 3:
-# list_3 = [
-#     ???,
-#     ???,
-#     ???,
-# ]
+list_3 = [
+    ['Anna', 49],
+    ['Julia', 37],
+    ['Mick', 31]
+]
 
 # ---------------------------------------------------------------------
 # Task 2. Retrieve elements from a List
@@ -41,24 +41,25 @@
 # - From List 3: Retrieve the age of the last friend you put in the list.
 
 # Name of second friend
-# second_friend_name = list_2[???]
-
+second_friend_name = list_2[1]
+print(second_friend_name)
 # Age of the last friend of the list
-# last_friend_age = list_3[???][???]
+last_friend_age = list_3[2][1]
+print(last_friend_age)
 
 # ---------------------------------------------------------------------
 # Task 3. Remove elements from a List
 
 # From the lists provided, remove the requested elements. Easy peazy.
 
-# cities = ["Houston", "Dallas", "Austin"]
-# fruits = ["apple", "banana", "orange"]
+cities = ["Houston", "Dallas", "Austin"]
+fruits = ["apple", "banana", "orange"]
 
 # Remove Austin from cities without using its index
-# cities.remove(???)
+cities.remove("Austin")
 
 # Remove the last element from fruits using negative indexes
-# ??? fruits[???]
+del fruits[-1]
 
 # ---------------------------------------------------------------------
 # Task 4. Verify if an element exists in a list
@@ -66,32 +67,33 @@
 # Given the provided list, write code that prints `YES` if the list contains the word `cheese`
 
 # The list
-# pantry = ["ham", "bread", "cheese"]
+pantry = ["ham", "bread", "cheese"]
 
 # Write code that prints YES if the list contains "cheese".
 
-# if ??? in ???:
-    # print('YES')
+if 'cheese' in pantry:
+    print('YES')
        
 # ---------------------------------------------------------------------
 # Task 5. Sorting and Reversing
 
 # Given the provided list, write code that sorts and reverses it, as required.
 
-# numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
+numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
 
 # Write code that sorts the list in ascending order without disturbing the original.
-# sorted_numbers = ???(numbers)
+sorted_numbers = sorted(numbers)
 
 # Write code that reverses (flips) the list without disturbing the original.
 # Remember that in this case, casting is required.
-# reversed_numbers = ???(???(numbers))
+reversed_numbers = list(reversed(numbers))
 
 # Write code that sorts the list in place, modifying the original.
-# numbers.s???()
+numbers.sort()
 
 # Write code that reverses (flips) the list in place, modifying the original.
-# numbers.r???()
+numbers.reverse()
+print(numbers)
 
 # ---------------------------------------------------------------------
 # Task 6. Stitching and Slicing
@@ -106,14 +108,14 @@
 
 # Now, write python code that prints a slice from 'full_week' with the work days.
 
-# work_days = ['mon', 'tue',  'wed', 'thu', 'fri']
-# rest_days = ['sat', 'sun']
+work_days = ['mon', 'tue',  'wed', 'thu', 'fri']
+rest_days = ['sat', 'sun']
 
 # Concatenate work_days and rest_rays
-# full_week = ???
+full_week = work_days + rest_days
 
 # Slice with the work days
-# print(full_week[???])
+print(full_week[:5]) #prints only first five days from the full_week
 
 # ---------------------------------------------------------------------
 # Task 7. Aggregators and Helpers
@@ -126,22 +128,22 @@
 # - How many times is the number 9 in the list?
 # - How many total elements are in the list?
 
-# numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
+numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
 
 # Lowest number
-# print(???(numbers))
+print(min(numbers))
 
 # Highest number
-# print(???(numbers))
+print(max(numbers))
 
 # Sum of everything
-# print(???(numbers))
+print(sum(numbers))
 
 # Count number 9s
-# print(numbers.???(???))
+print(numbers.count(9))
 
 # Total number of elements
-# print(???(numbers))
+print(len(numbers))
 
 ## Exercises 🏋🏻
 
@@ -167,23 +169,23 @@
 # - Use print() at the end, to show the user's biography.
 
 # Declare an empty list
-# user_data = []
+user_data = []
 
 # Gather user input
-# name = input("Name: ")
-# age = input("Age: ")
-# city = input("City: ")
+name = input("Name: ")
+age = input("Age: ")
+city = input("City: ")
 
 # Add user input to the list
-# user_data.???(name)
-# user_data.???(age)
-# user_data.???(city)
+user_data.append(name)
+user_data.append(age)
+user_data.append(city)
 
 # Declare your template. Use list elements as values.
-# biography = f"???"
+biography = f"My name is {name}, I'm {age} years old and I was born in {city}."
 
 # Show the user's biography
-# print(biography)
+print(biography)
 
 # ---------------------------------------------------------------------
 # Exercise 2. The Card Deck ♦️♥️♠️♣️
@@ -196,31 +198,31 @@
 # 🔥 Tip: You might want to stitch them together first.
 
 # Here are the card decks.
-# numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-# faces = ['J', 'Q', 'K']
+numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+faces = ['J', 'Q', 'K']
 
 # Concatenate them first.
-# card_deck = ???
+card_deck = numbers + faces
 
 # Print out the numbers 1 to 6.
-# print(card_deck[???])
+print(card_deck[:6])
 
 # Print out the last 3. Do it using POSITIVE indexes.
-# print(card_deck[???])
+print(card_deck[10:])
 
 # Print out the last 3 (same as before), but using NEGATIVE indexes.
-# print(card_deck[???])
+print(card_deck[-3:])
 
 # Print out everything EXCEPT the first and last.
-# print(card_deck[???])
+print(card_deck[1:-1])
 
 # What would you use so the printout includes the following:
 # Hint: It's every third card of the full deck.
 # ['1', '4', '7', '10', 'K']
-# print(card_deck[???])
+print(card_deck[::3])
 
 # Print out the EVEN numbers. No faces.
-# print(???)
+print(card_deck[1:10:2])
 
 # ---------------------------------------------------------------------
 # Exercise 3. The Steps Tracker 👟
