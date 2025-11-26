@@ -12,7 +12,10 @@
 # Example:
 # Input: -3 => Output: 3
 # Input: 5 => Output: 5
-
+my_number = -1
+if my_number < 0:
+    my_number = my_number * -1
+print(my_number)
 
 # ---------------------------------------------------------------------
 
@@ -23,7 +26,15 @@
 # If the number is divisible of 7, print “Go”
 # For numbers which are divisible of 3 and 7, print “BinGo”
 # Otherwise, print the original number: “{number} is just a number”
-
+number = 14
+if number % 3 == 0 and number % 7 == 0:
+    print("Bingo")
+elif number % 3 == 0:
+    print("Bin")
+elif number % 7 == 0:
+    print("Go")
+else:
+    print(f"{number} is just a number")
 
 # ---------------------------------------------------------------------
 
@@ -36,6 +47,22 @@
 # Example:
 # x = 1, y = 5, z = 3 => Output: 3
 
+x = 1
+y = 5
+z = 3
+
+if x > y and x > z and y > z:
+    print(y)
+elif x > y and x > z and y < z:
+    print(z)
+elif y > x and y > z and z > x:
+    print(z)
+elif y > x and y > z and z < x:
+    print(x)
+elif z > y and z > x and y > x:
+    print(y)
+elif z > x and z > y and y < x:
+    print(x) # Try to make it shorter and more efficient when have more time
 
 # ---------------------------------------------------------------------
 
@@ -47,7 +74,12 @@
 # It should print True if the number is a palindrome and False if it is not.
 #
 # Palindrome number: 121, 898
-
+p_number = 1221
+p_number = str(p_number)
+if p_number == p_number[::-1]:
+    print(True)
+else:
+    print(False)
 
 # ---------------------------------------------------------------------
 
@@ -61,4 +93,6 @@
 # sentence or word.
 #
 # Example: "tcefreP!" -> Perfect!
-
+review_iverted = "tcefreP!"
+review_fixed = review_iverted[len(review_iverted)-2::-1] + review_iverted[len(review_iverted)-1:]
+print(review_fixed)
