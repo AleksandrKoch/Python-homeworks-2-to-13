@@ -241,32 +241,31 @@ print(card_deck[1:10:2])
 # - What was the least number of steps you took on a day?
 # - What was the most number of steps you took on a day? 
 
-# monday = input('Steps for Monday: ')
-# tuesday = input('Steps for Tuesday: ')
-# wednesday = input('Steps for Wednesday: ')
-# thursday = input('Steps for Thursday: ')
-# friday = input('Steps for Friday: ')
-# saturday = input('Steps for Saturday: ')
-# sunday = input('Steps for Sunday: ')
+monday = int(input('Steps for Monday: '))
+tuesday = int(input('Steps for Tuesday: '))
+wednesday = int(input('Steps for Wednesday: '))
+thursday = int(input('Steps for Thursday: '))
+friday = int(input('Steps for Friday: '))
+saturday = int(input('Steps for Saturday: '))
+sunday = int(input('Steps for Sunday: '))
 
-# steps = [???]
+steps = [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
 
 # Steps on Wednesday
-# print(steps[???])
+print(steps[2])
 
 # Steps on the work days
-# work_days_steps = steps[???]
-# print(???(work_days_steps))
+work_days_steps = steps[:5]
+print(sum(work_days_steps))
 
 # Steps over the whole week
-# print(???(steps))
+print(sum(steps))
 
 # Least number of steps
-# print(???(steps))
+print(min(steps))
 
 # Highest number of steps
-# print(???(steps))
-
+print(max(steps))
 # ---------------------------------------------------------------------
 # Exercise 4. Bonus Round: The Speech Reverser and Counter 🎤
 
@@ -289,14 +288,14 @@ print(card_deck[1:10:2])
 # - Prints out the word count. 
 
 # Get input from the user
-# user_input = ???('Give me a phrase')
+user_input = input('Give me a phrase')
 
 # Split user input into words
-# words = user_input.???()
+words = user_input.split()
 
 # Reverse the list and print it
-# reversed_words = ???(???(words))
-# print(reversed_words)
+reversed_words = list(reversed(words))
+print(reversed_words)
 
 # Print the length of the words list
-# print(???(words))
+print(len(words))

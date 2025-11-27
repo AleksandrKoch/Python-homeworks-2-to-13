@@ -1,35 +1,32 @@
-# Exercise 2. The Card Deck ♦️♥️♠️♣️
+# Exercise 4. Bonus Round: The Speech Reverser and Counter 🎤
 
-# You will be provided with a couple lists that contain the cards for a card deck.
-# One of the lists contains the numbers, and the other one contains the faces.
+# Python has a handy little method that allows you to split a string.
+# In its most basic form it splits a string into a list using the spaces as separators:
 
-# You will be asked to fill in the blanks to print out certain cards for a card game you've been working on.
+# Example:
 
-# 🔥 Tip: You might want to stitch them together first.
+# phrase = "My Name is Joseph"
+# words = phrase.split()
+# print(words) -> ['My', 'Name', 'is', 'Joseph']
 
-# Here are the card decks.
-numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-faces = ['J', 'Q', 'K']
+# More information about split: https://www.w3schools.com/python/ref_string_split.asp
 
-# Concatenate them first.
-card_deck = numbers + faces
+# Now, armed with `split()` write a program that does the following:
 
-# Print out the numbers 1 to 6.
-print(card_deck[:6])
+# - Takes a string input from the user.
+# - Splits it into words.
+# - Prints out the string with the words in reverse order.
+# - Prints out the word count.
 
-# Print out the last 3. Do it using POSITIVE indexes.
-print(card_deck[10:])
+# Get input from the user
+user_input = input('Give me a phrase')
 
-# Print out the last 3 (same as before), but using NEGATIVE indexes.
-print(card_deck[-3:])
+# Split user input into words
+words = user_input.split()
 
-# Print out everything EXCEPT the first and last.
-print(card_deck[1:-1])
+# Reverse the list and print it
+reversed_words = list(reversed(words))
+print(reversed_words)
 
-# What would you use so the printout includes the following:
-# Hint: It's every third card of the full deck.
-# ['1', '4', '7', '10', 'K']
-print(card_deck[::3])
-
-# Print out the EVEN numbers. No faces.
-print(card_deck[1:10:2])
+# Print the length of the words list
+print(len(words))
