@@ -110,16 +110,19 @@ for i in range(0, 10, 2):
 # - Create a loop to iterate through characters of my_string. 
 # - If the character is a digit (`if character in numbers`) print it.
 
-# my_string = 's0m3 str1ng w1th numb3r5'
-# numbers = '1234567890'
+my_string = 's0m3 str1ng w1th numb3r5'
+numbers = '1234567890'
 
-# for ??? in ???:
-    # if ??? in ???:
-    #     print(character)
-
+for character in my_string:
+    if character in numbers:
+        print(character)
 
 # Part two: Modify the code to print the first digit only
 
+for character in my_string:
+    if character in numbers:
+        print(character)
+        break
 # ---------------------------------------------------------------------
 # Exercise 2. Vowel Counter
 
@@ -130,13 +133,16 @@ for i in range(0, 10, 2):
 # quote = "Life is like riding a bicycle. To keep your balance, you MUST keep moving."
 # vowel_count = 0
 
-# for ??? ??? ???:
+quote = "Life is like riding a bicycle. To keep your balance, you MUST keep moving."
+vowel_count = 0
+
+for character in quote:
     # 'A' and 'a' are different in python, so we include both upper and lowercase
     # vowels in our comparison string to account for this difference.
-    # if ??? ??? 'aeiouAEIOU':
-        # vowel_count += ???
+    if character in 'aeiouAEIOU':
+        vowel_count += 1
 
-# print(f"The number of vowels in the quote is: {vowel_count}")
+print(f"The number of vowels in the quote is: {vowel_count}")
 
 # ---------------------------------------------------------------------
 # Exercise 3. Sum of all Digits 🔢
@@ -146,15 +152,15 @@ for i in range(0, 10, 2):
 
 # Hint: You can put the numbers you find into a list (cast as `int`) and use `sum()` on the list at the end.
 
-# mixed_string = "abc123xyz456"
-# digits = "0123456789"
-# found_digits = ???
+mixed_string = "abc123xyz456"
+digits = "0123456789"
+found_digits = []
 
-# for char in mixed_string:
-    # if char in ???:
-        # found_digits.a???(int(char))
+for char in mixed_string:
+    if char in digits:
+        found_digits.append(int(char))
 
-# print(f"The total sum of numbers in the string is: {sum(found_digits)}")
+print(f"The total sum of numbers in the string is: {sum(found_digits)}")
 
 # ---------------------------------------------------------------------
 # Exercise 4. Password Strength Checker
@@ -164,14 +170,14 @@ for i in range(0, 10, 2):
 
 # Create a Python program to check the strength of a list of passwords and count how many are strong.
 
-# passwords = ['Passw0rd', 'hello', 'strongPass1', 'weak']
-# strong_password_count = 0
+passwords = ['Passw0rd', 'hello', 'strongPass1', 'weak']
+strong_password_count = 0
 
-# for ??? ??? ???:
-    # if ???(password) >= 8:
-        # strong_password_count ??? 1
+for password in passwords:
+    if len(password) >= 8:
+        strong_password_count += 1
 
-# print(f"Number of strong passwords: {strong_password_count}")
+print(f"Number of strong passwords: {strong_password_count}")
 
 # ---------------------------------------------------------------------
 # Exercise 5. The Red Crayon 🖍️
@@ -181,13 +187,13 @@ for i in range(0, 10, 2):
 
 # Use a while loop to simulate this scenario.  As soon as you find the "Red" crayon, stop the loop.
 
-# colors = ["Blue", "Yellow", "Green", "Red", "Purple", "Orange"]
-# index = 0
+colors = ["Blue", "Yellow", "Green", "Red", "Purple", "Orange"]
+index = 0
 
-# This should basically say: while the current color being evaluated is 
+# This should basically say: while the current color being evaluated is
 # different than "Red", increment to the next color and try again.
-# while colors[index] ??? "Red":
-    # print(f"Found {colors[index]} crayon. Still looking for Red.")
-    # index ??? 1
+while colors[index] != "Red":
+    print(f"Found {colors[index]} crayon. Still looking for Red.")
+    index += 1
 
-# print("Found the Red crayon!")
+print("Found the Red crayon!")

@@ -1,8 +1,17 @@
-# Task 6. Using range() in a loop
+# Exercise 5. The Red Crayon 🖍️
 
-# Remember that range() returns an iterable, so you will usually find it used in a for loop.
+# Imagine you have a box of crayons, and you're looking for a "Red" crayon.
+# You pull out one crayon at a time from the box.
 
-# Complete the following code so it prints the even numbers between 0 and 10;
+# Use a while loop to simulate this scenario.  As soon as you find the "Red" crayon, stop the loop.
 
-for i in range(0, 10, 2):
-    print(i)
+colors = ["Blue", "Yellow", "Green", "Red", "Purple", "Orange"]
+index = 0
+
+# This should basically say: while the current color being evaluated is
+# different than "Red", increment to the next color and try again.
+while colors[index] != "Red":
+    print(f"Found {colors[index]} crayon. Still looking for Red.")
+    index += 1
+
+print("Found the Red crayon!")
