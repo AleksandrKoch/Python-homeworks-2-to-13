@@ -3,12 +3,20 @@
 
 # Basic Function
 # Define a basic function that only prints Hello. Create the definition using def and the call that executes it.
+def hello():
+    print("hello")
 
+hello()
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Basic Function with Parameters
 # Define a basic function that prints a greeting taking a given name.
+name = input("Enter your name: ")
 
+def print_greeting(name):
+    print("Hello, " + name)
+
+print_greeting(name)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Basic Function with Default Values
@@ -21,6 +29,11 @@
 # Prints: Hello, Tom!
 # greeting('Tom')
 
+def print_stranger_greeting(name='stranger'):
+    print("Hello, " + name)
+
+print_stranger_greeting() # Prints: Hello, stranger!
+print_stranger_greeting('Tom') # Prints: Hello, Tom!
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Multiple Parameters
@@ -31,6 +44,8 @@
 
 # Prints (default values might be useful): The sum of 1 + 0 = 1
 # add(1)
+def sum_of_two(num1=0, num2=0):
+    print(f"The sum of {num1} + {num2} = {num1 + num2}")
 
 # ----------------------------------------------------------------------------------------------------------------------
 
