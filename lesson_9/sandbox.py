@@ -1,16 +1,20 @@
-# Find Max number
-# Create a function to find the largest number in a list without using the built-in max() function.
+# Even/Odd Checker Function
+# Your task is to write a function that determines if a given integer is even or odd. The function should
+# print Even for even numbers and Odd for odd numbers.
 
-# - Define a function called find_max that takes a list of numbers as an argument.
-# - Initialize a variable result and set it to the 1st item of the list using [0]
-#   - This variable will hold the largest number as we iterate through the list.
-# - Loop through each number in the list.
-# - Check if number > result
-#   - If it is, update result with the new greater number.
-# - return result
+# What You Need to Check
+# - Determine whether the input number is even or odd.
+# - An even number can be exactly divided by 2 without a remainder.
+# - An odd number leaves a remainder of 1 when divided by 2.
 
-# Define your function here
+# Define a function is_even_odd(number) here
+def is_even_odd(number):
+    if number % 2 == 0:
+        print(f"{number} is an even number")
+    else:
+        print(f"{number} is an odd number")
 
-# Test the function with a sample list of numbers.
-
-# Output should be the maximum number in the list.
+# Test the function calling it using a variety of numbers like: 1, 10, 5.5, 9
+numbers = [1, 10, 5.5, 9]
+for number in numbers:
+    is_even_odd(number)

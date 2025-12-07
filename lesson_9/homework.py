@@ -153,10 +153,16 @@ print(anagram(test_str1, test_str2))
 # - return result
 
 # Define your function here
-
+def find_max(nums):
+    result = nums[0]
+    for num in nums[1:]:
+        if num > result:
+            result = num
+    return result
 # Test the function with a sample list of numbers.
-
+sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Output should be the maximum number in the list.
+print(find_max(sample_list))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -170,5 +176,13 @@ print(anagram(test_str1, test_str2))
 # - An odd number leaves a remainder of 1 when divided by 2.
 
 # Define a function is_even_odd(number) here
+def is_even_odd(number):
+    if number % 2 == 0:
+        print(f"{number} is an even number")
+    else:
+        print(f"{number} is an odd number")
 
 # Test the function calling it using a variety of numbers like: 1, 10, 5.5, 9
+numbers = [1, 10, 5.5, 9]
+for number in numbers:
+    is_even_odd(number)
