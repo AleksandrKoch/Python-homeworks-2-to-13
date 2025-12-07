@@ -1,20 +1,16 @@
-# Returning Values
-# Define a validator function that you can use to determine if a word is longer than 8 characters.
-# After creating the function, make sure to test it. Create a list of words and iterate over this
-# list using a for loop.
+# Find Max number
+# Create a function to find the largest number in a list without using the built-in max() function.
 
-# Tip: Validator functions return True / False which we can use in conditionals to do things like print a message.
+# - Define a function called find_max that takes a list of numbers as an argument.
+# - Initialize a variable result and set it to the 1st item of the list using [0]
+#   - This variable will hold the largest number as we iterate through the list.
+# - Loop through each number in the list.
+# - Check if number > result
+#   - If it is, update result with the new greater number.
+# - return result
 
-def validator(word):
-    if len(word) > 8:
-        return True
-    else:
-        return False
+# Define your function here
 
-list_of_words = ['1', '12', '123', '1234', '12345', '123456', '1234567', '12345678', '123456789', '']
+# Test the function with a sample list of numbers.
 
-for word in list_of_words:
-    if validator(word) == False:
-        print(f"For word {word} length is less or equal to 8 symbols")
-    else:
-        print(f"For word {word} length is greater than 8 symbols")
+# Output should be the maximum number in the list.

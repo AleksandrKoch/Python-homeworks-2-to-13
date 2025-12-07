@@ -100,9 +100,17 @@ for word in list_of_words:
 # - If the number is a multiple of 3, the function should return: Fizz
 # - If the number is a multiple of 5, the function should return: Buzz
 # - Otherwise, the function should return the number.
-
+def fizzbuzz(number):
+    if number % 3 == 0 and number % 5 == 0:
+        return "FizzBuzz"
+    elif number % 3 == 0:
+        return "Fizz"
+    elif number % 5 == 0:
+        return "Buzz"
+    else:
+        return number
 # Call the function here
-
+print(fizzbuzz(1))
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Anagram
@@ -122,6 +130,14 @@ for word in list_of_words:
 # Test your function with these strings
 test_str1 = 'abcde'
 test_str2 = 'edcba'
+
+def anagram(test_str1, test_str2):
+    if len(test_str1) == len(test_str2) and sorted(test_str1) == sorted(test_str2):
+        return True
+    else:
+        return False
+
+print(anagram(test_str1, test_str2))
 
 # ----------------------------------------------------------------------------------------------------------------------
 
