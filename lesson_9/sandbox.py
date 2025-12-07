@@ -1,20 +1,18 @@
-# Even/Odd Checker Function
-# Your task is to write a function that determines if a given integer is even or odd. The function should
-# print Even for even numbers and Odd for odd numbers.
+# Nested Dictionary
 
-# What You Need to Check
-# - Determine whether the input number is even or odd.
-# - An even number can be exactly divided by 2 without a remainder.
-# - An odd number leaves a remainder of 1 when divided by 2.
-
-# Define a function is_even_odd(number) here
-def is_even_odd(number):
-    if number % 2 == 0:
-        print(f"{number} is an even number")
-    else:
-        print(f"{number} is an odd number")
-
-# Test the function calling it using a variety of numbers like: 1, 10, 5.5, 9
-numbers = [1, 10, 5.5, 9]
-for number in numbers:
-    is_even_odd(number)
+# Create a nested dictionary for a list of 5 company employees.
+# The key should be their employee id (an integer from 1-5 will do) and the value should be a dictionary with
+# the name, department and salary of the employee.
+employees = {
+    1:{
+        'name':'Alex',
+        'department':'Software Development',
+        'salary':120000
+    },
+    2:{
+        'name':'Julia',
+        'department':'Quality Assurance',
+        'salary':100000
+    }
+}
+print(employees)

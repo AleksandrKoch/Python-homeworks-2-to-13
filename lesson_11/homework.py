@@ -5,7 +5,19 @@
 
 # Create an empty dictionary and then add a few of your friends. Make the key their email (can be fake)
 # and the value their name. When you're done, create the same dictionary as a pre-populated dictionary.
+basic_dictionary = {}
+basic_dictionary['anna@gmail.com'] = "Anna"
+basic_dictionary['boris@gmail.com'] = "Boris"
+basic_dictionary['constantin@gmail.com'] = "Constantin"
 
+pre_populated_dictionary = {
+    'anna@gmail.com': 'Anna',
+    'boris@gmail.com': 'Boris',
+    'constantin@gmail.com': 'Constantin'
+}
+
+print(basic_dictionary)
+print(pre_populated_dictionary)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Nested Dictionary
@@ -13,7 +25,18 @@
 # Create a nested dictionary for a list of 5 company employees.
 # The key should be their employee id (an integer from 1-5 will do) and the value should be a dictionary with
 # the name, department and salary of the employee.
-
+employees = {
+    1:{
+        'name':'Alex',
+        'department':'Software Development',
+        'salary':120000
+    },
+    2:{
+        'name':'Julia',
+        'department':'Quality Assurance',
+        'salary':100000
+    }
+}
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Accessing Values
