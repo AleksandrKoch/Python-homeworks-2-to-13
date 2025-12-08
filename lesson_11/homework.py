@@ -35,8 +35,14 @@ employees = {
         'name':'Julia',
         'department':'Quality Assurance',
         'salary':100000
-    }
+    },
+3:{
+        'name':'John',
+        'department':'Software Development',
+        'salary':120000
+    },
 }
+print(employees)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Accessing Values
@@ -46,7 +52,10 @@ employees = {
 # - Print a list of the employee IDs
 # - Print the employee data for employee with the ID 3.
 # - Loop over the employees and print all their names and salaries.
-
+print(list(employees.keys()))
+print(employees[3])
+for employee in employees:
+    print(f'Name {employees[employee]['name']}, Salary {employees[employee]['salary']}')
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Updating Values
@@ -62,13 +71,23 @@ salaries = {
 
 # We need to increase everyone's salary by 1,000 and also add a new employee joseph with a salary of 18,000.
 # Please come up with a way to do this using update()
+updated_salaries = {}
 
+for key, value in salaries.items():
+    updated_salaries[key] = salaries[key] + 1000
+
+updated_salaries['joseph'] = 18000
+
+salaries.update(updated_salaries)
+
+print(salaries)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Deleting Values
 
 # You remember those employees from Updating Values section? Well, Julia got fired, so we need to remove her
 # name from the salaries dictionary. How would you do that?
+del salaries['julia']
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -89,7 +108,30 @@ films = {
    2019: "Avengers: Endgame",
    2020: "Bad Boys for Life"
 }
+# - Is Black Panther in the list of movies?
+for film in films.values():
+    if film == "Black Panther":
+        print("Black Panther is in the list")
+        break
+    else:
+        if film == list(films.values())[-1]:
+            print("Black Panther is not the list")
 
+# - Is there any movie for the year 2021?
+for year in films.keys():
+    if films[year] == 2021:
+        print("year 2021 is in the list of films")
+        break
+    else:
+        if year == list(films.keys())[-1]:
+            print("year 2021 is not in the list of films")
+
+# - Print a message for each element that shows the year, the title and the position in the dictionary (1-5).
+#   Hint: use a counter.
+counter = 0
+for year, film in films.items():
+    counter += 1
+    print(f"{counter}: {year} - {film}")
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 1. Animal Shelter Volunteer
