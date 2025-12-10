@@ -1,41 +1,37 @@
-# Iterating over Dictionaries
+# Exercise 5. Find the highest score
+# Create a Python function named find_max_score that takes a dictionary of names and scores as an argument.
+# The function should return the name and score of the person with the highest score in the form of a dictionary.
 
-# Given the list of movies below, please use view objects (keys(), values(), items() - where necessary) to answer
-# the questions:
-
-# - Is Black Panther in the list of movies?
-# - Is there any movie for the year 2021?
-# - Print a message for each element that shows the year, the title and the position in the dictionary (1-5).
-#   Hint: use a counter.
-
-films = {
-   2016: "Star Wars: Episode VII - The Force Awakens",
-   2017: "Star Wars: Episode VIII - The Last Jedi",
-   2018: "Black Panther",
-   2019: "Avengers: Endgame",
-   2020: "Bad Boys for Life"
+# Sample test_scores dictionary
+test_scores = {
+  'James': 83,
+  'Julia': 91,
+  'Ryan': 90,
+  'Maria': 80,
+  'David': 79,
+  'Adam': 96,
+  'Jennifer': 97,
+  'Susan': 77
 }
-# - Is Black Panther in the list of movies?
-for film in films.values():
-    if film == "Black Panther":
-        print("Black Panther is in the list")
-        break
-    else:
-        if film == list(films.values())[-1]:
-            print("Black Panther is not the list")
 
-# - Is there any movie for the year 2021?
-for year in films.keys():
-    if films[year] == 2021:
-        print("year 2021 is in the list of films")
-        break
-    else:
-        if year == list(films.keys())[-1]:
-            print("year 2021 is not in the list of films")
+#  Find the person with the highest test score and display both their name and score
 
-# - Print a message for each element that shows the year, the title and the position in the dictionary (1-5).
-#   Hint: use a counter.
-counter = 0
-for year, film in films.items():
-    counter += 1
-    print(f"{counter}: {year} - {film}")
+# Steps:
+# - Define a function called find_max_score that takes one argument, scores_dict, which is a dictionary of names
+#   (as keys) and scores (as values).
+# - Create an empty result variable
+# - Assume the initial maximum score is 0
+# - Iterate over each key-value pair in the test_scores, using the .items() method
+# - Check if the current score (v) is >= to the current maximum score
+# - If so, update the max score and assign the key-value pair to the result
+# - Return result and test the function
+
+def find_max_score(scores_dict):
+    result = {}
+    max_score = 0
+    for name, score in scores_dict.items():
+        if score > max_score:
+            max_score = score
+            result = {name: max_score}
+    return result
+print(find_max_score(test_scores))

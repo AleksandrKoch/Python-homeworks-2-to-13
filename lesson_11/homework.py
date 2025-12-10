@@ -146,26 +146,27 @@ for year, film in films.items():
 
 # Pre-code
 # Initialize the shelter_pets dictionary
-# shelter_pets = {
-#   'Whiskers': {'Age': 2, 'Type': 'Cat', 'Adopted': False},
-#   'Fido': {'Age': 4, 'Type': 'Dog', 'Adopted': True},
-#   'Patch': {'Age': 1, 'Type': 'Dog', 'Adopted': False},
-#   'Snowball': {'Age': 3, 'Type': 'Rabbit', 'Adopted': True}
-# }
+shelter_pets = {
+  'Whiskers': {'Age': 2, 'Type': 'Cat', 'Adopted': False},
+  'Fido': {'Age': 4, 'Type': 'Dog', 'Adopted': True},
+  'Patch': {'Age': 1, 'Type': 'Dog', 'Adopted': False},
+  'Snowball': {'Age': 3, 'Type': 'Rabbit', 'Adopted': True}
+}
 
 # Access and print the age of Whiskers
-# print(shelter_pets['Whiskers']['Age'])  # Should output 2
+print(shelter_pets['Whiskers']['Age'])  # Should output 2
 
 # Access and print if Patch is a dog or cat
-# print(???)
+print(shelter_pets['Patch']['Type'])
 
 # Access and print if Snowball is adopted or not
-# print(???)
+print("Snowball adopted: " + str(shelter_pets['Snowball']['Adopted']))
+
 
 # Find out which pets are not yet adopted and print their names
-# for ???, ??? in shelter_pets.i???():
-# if not info['???']:
-# print(pet)
+for pet, info in shelter_pets.items():
+    if not info['Adopted']:
+        print(f"{pet} is not adopted yet")
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -183,32 +184,31 @@ for year, film in films.items():
 
 # Pre-code:
 # Initialize a dictionary called best_selling_books to store your collection.
-
-# best_selling_books = {
-#   1997: "Harry Potter and the Philosopher's Stone",
-#   1984: "Neuromancer",
-#   2003: "The Kite Runner",
-#   2015: "Go Set a Watchman"
-# }
+best_selling_books = {
+  1997: "Harry Potter and the Philosopher's Stone",
+  1984: "Neuromancer",
+  2003: "The Kite Runner",
+  2015: "Go Set a Watchman"
+}
 
 # The U.S. title for the Harry Potter book published in 1997 is "Harry Potter and the Sorcerer's Stone".
 # Update the title to its U.S. version.
-# best_selling_books ???  = "Harry Potter and the Sorcerer's Stone"
+best_selling_books[1997]  = "Harry Potter and the Sorcerer's Stone"
 
 # New sales data reveals that "The Hunt for Red October" was the actual best-seller for 1984
 # and "The Da Vinci Code"  for 2003.
 # Update these in a single operation.
-
-# best_selling_books.u???({
-#   1984: ???
-#   ???: ???
-# ???
+best_selling_books.update({
+  1984: "The Hunt for Red October",
+  2003: "The Da Vinci Code"
+})
 
 # The book published in 2015, "Go Set a Watchman," is no longer considered a best-seller.
 # Use the del keyword to remove this entry from the dictionary.
+del best_selling_books[2015]
 
 # Print the updated dictionary of best selling books.
-
+print(best_selling_books)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 3. Manage Music Collection
@@ -224,44 +224,64 @@ for year, film in films.items():
 
 # Steps and pre-code
 # Initialize a dictionary to store Bob Dylan's albums
-# dylan_albums = {
-#   1962: "Bob Dylan",
-#   1963: "The Freewheelin' Bob Dylan",
-#   1975: "Blood on the Tracks",
-#   1997: "Time Out of Mind"
-# }
+dylan_albums = {
+  1962: "Bob Dylan",
+  1963: "The Freewheelin' Bob Dylan",
+  1975: "Blood on the Tracks",
+  1997: "Time Out of Mind"
+}
 
 # Use .keys() to loop through and print out all the release years
-# for year in dylan_albums.keys():
-# print(year)
+for year in dylan_albums.keys():
+    print(year)
 
 # Use .values() to loop through and print out all the album names
+for album in dylan_albums.values():
+    print(album)
 
 # Use .items() to loop through and print out both the release year and album name
+for year, album in dylan_albums.items():
+    print(f"{year}: {album}\n")
 
 # Use the 'in' keyword to check if a particular year or album is in the dictionary (pick any year and any album)
 # Remember the keyword by default checks only the keys, not the values.
 # If you want to check if a particular value (in this case, an album name),
 # you need to specify that you're searching within the dictionary's values.
+check_year = 1975
+if check_year in dylan_albums:
+    print(f"Yes, {check_year} exists in the collection.")
+else:
+    print(f"No, {check_year} is not in the collection.")
+
+check_album = "Bob Dylan"
+if check_album in dylan_albums.values():
+    print(f"Album {check_album} is in the collection")
+else:
+    print(f"Album {check_album} is not in the collection")
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 4. Remove duplicates
 # Remove duplicates from the following dictionary:
-# person = {
-#   'first': 'Jeff',
-#   'name': 'Jeff',
-#   'last': 'Smith',
-#   'last_name': 'Smith',
-#   'state': 'CA',
-#   'age': 55
-# }
+person = {
+  'first': 'Jeff',
+  'name': 'Jeff',
+  'last': 'Smith',
+  'last_name': 'Smith',
+  'state': 'CA',
+  'age': 55
+}
 
 # Steps:
 # - Create a dict person
 # - Create an empty dictionary result = {}
 # - Make a for loop to iterate over person dictionary
 # - If item’s value not in result dict, add key value part into result.
+result = {}
+
+for key, value in person.items():
+    if value not in result.values():
+        result[key] = value
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -270,16 +290,16 @@ for year, film in films.items():
 # The function should return the name and score of the person with the highest score in the form of a dictionary.
 
 # Sample test_scores dictionary
-# test_scores = {
-#   'James': 83,
-#   'Julia': 91,
-#   'Ryan': 90,
-#   'Maria': 80,
-#   'David': 79,
-#   'Adam': 96,
-#   'Jennifer': 97,
-#   'Susan': 77
-# }
+test_scores = {
+  'James': 83,
+  'Julia': 91,
+  'Ryan': 90,
+  'Maria': 80,
+  'David': 79,
+  'Adam': 96,
+  'Jennifer': 97,
+  'Susan': 77
+}
 
 #  Find the person with the highest test score and display both their name and score
 
@@ -292,3 +312,13 @@ for year, film in films.items():
 # - Check if the current score (v) is >= to the current maximum score
 # - If so, update the max score and assign the key-value pair to the result
 # - Return result and test the function
+
+def find_max_score(scores_dict):
+    result = {}
+    max_score = 0
+    for name, score in scores_dict.items():
+        if score > max_score:
+            max_score = score
+            result = {name: max_score}
+    return result
+print(find_max_score(test_scores))
